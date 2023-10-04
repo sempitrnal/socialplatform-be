@@ -3,11 +3,16 @@ using SocialPlatform.API.Models;
 
 namespace SocialPlatform.Data.Context;
 
-public class SocalPlatformDbContext : DbContext
+public class SocialPlatformDbContext : DbContext
 {
-    public SocalPlatformDbContext(DbContextOptions<SocalPlatformDbContext> options) : base(options)
+    public SocialPlatformDbContext(DbContextOptions<SocialPlatformDbContext> options) : base(options)
     {
     }
-    
+
+
+
     public DbSet<User> Users { get; set; }
+    public DbSet<Post> Posts { get; set; }
+    public DbSet<Comment> Comments { get; set; }
+    public DbSet<PostLike> PostLikes { get; set; }
 }

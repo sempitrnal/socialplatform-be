@@ -7,12 +7,28 @@
         <UserSecretsId>aspnet-SocialPlatform.API-5A2814BE-8DF0-4173-858C-1D2FA170527B</UserSecretsId>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9"/>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.9"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9"/>
-        <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\SocialPlatform.Services\SocialPlatform.Services.csproj" />
+    </ItemGroup>
+
+
+
+
+
+
+    <ItemGroup>
+      <Folder Include="Images\users\" />
     </ItemGroup>
 
 </Project>

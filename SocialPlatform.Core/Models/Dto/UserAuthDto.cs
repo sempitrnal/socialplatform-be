@@ -1,7 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SocialPlatform.API.Models.Dto;
 
-public class UserDto
+public class UserAuthDto
 {
-    public required string Username { get; set; }
-    public required string Password { get; set; }
+    [Required(ErrorMessage = "Username is required")]
+    public string Username { get; set; }
+    [Required(ErrorMessage = "Password is required")]
+    public string Password { get; set; }
 }
