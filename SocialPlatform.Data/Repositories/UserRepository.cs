@@ -43,15 +43,17 @@ public class UserRepository : IUserRepository
 
     public async Task<User> UpdateUserAsync(int id,[FromForm] User updatedUser)
     {
-      
-       
-        if (updatedUser.ImageName != null)
+
+        Console.WriteLine("Hello");
+        Console.WriteLine(updatedUser.ImageFile == null);
+        if (updatedUser.ImageFile != null)
         {
-            
+            DeleteImage(updatedUser.ImageName);
             updatedUser.ImageName = await SaveImage(updatedUser.ImageFile, updatedUser.Username);
             
             
         }
+        
         Console.WriteLine(updatedUser.ImageName);
         _socialPlatformDbContext.Users.Update(updatedUser);
         await _socialPlatformDbContext.SaveChangesAsync();

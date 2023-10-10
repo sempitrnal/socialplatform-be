@@ -1,32 +1,24 @@
 ﻿<Properties StartupConfiguration="{3F54C5B0-4482-41CE-A660-E0B2AE7B8A8A}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SocialPlatform.API/Controllers/AuthController.cs">
-    <Files>
-      <File FileName="SocialPlatform.API/Program.cs" />
-      <File FileName="SocialPlatform.Services/Program.cs" />
-      <File FileName="SocialPlatform.API/Controllers/AuthController.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SocialPlatform" expanded="True" selected="True">
+          <Node name="SocialPlatform">
             <Node name="SocialPlatform.API" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
               <Node name="Controllers" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
-            <Node name="SocialPlatform.Core" expanded="True" />
-            <Node name="SocialPlatform.Data" expanded="True" />
+            <Node name="SocialPlatform.Services" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.SocialPlatform.API PreferredExecutionTarget="/Applications/Brave Browser.app" />
 </Properties>

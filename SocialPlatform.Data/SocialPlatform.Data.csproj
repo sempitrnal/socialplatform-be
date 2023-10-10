@@ -28,4 +28,10 @@
 
 
 
+    <ItemGroup>
+      <None Remove="Hubs\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Hubs\" />
+    </ItemGroup>
 </Project>

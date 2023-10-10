@@ -7,6 +7,6 @@ namespace SocialPlatform.API.Services;
 public interface IAuthService
 {
     Task<string?> LoginAsync(UserAuthDto request);
-    String CreateToken(User user);
-
+    string CreateToken(User user);
+    Task<bool?> CheckPassword(UserAuthDto request);
 }

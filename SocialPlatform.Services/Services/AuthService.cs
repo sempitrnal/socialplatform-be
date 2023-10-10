@@ -33,7 +33,15 @@ public class AuthService : IAuthService
         return CreateToken(user);
 
     }
-
+    public async Task<bool?> CheckPassword(UserAuthDto request)
+    {
+        var user = await _userService.FindUserByUsernameAsync(request.Username);
+        if (user is null)
+            return null;
+        else if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+            return false;
+        return true;
+    }
     public string CreateToken(User user)
     {
         List<Claim> claims = new List<Claim>()

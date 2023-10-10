@@ -30,10 +30,10 @@ namespace SocialPlatform.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CommentCreatedAt")
+                    b.Property<DateTime?>("CommentCreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Post")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -96,6 +96,8 @@ namespace SocialPlatform.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("PostLikes");
                 });
@@ -189,6 +191,14 @@ namespace SocialPlatform.Data.Migrations
                     b.HasOne("SocialPlatform.API.Models.Post", null)
                         .WithMany("Likes")
                         .HasForeignKey("PostId");
+
+                    b.HasOne("SocialPlatform.API.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("UserUser", b =>

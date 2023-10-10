@@ -14,4 +14,10 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <None Remove="Models\Enums\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Models\Enums\" />
+    </ItemGroup>
 </Project>

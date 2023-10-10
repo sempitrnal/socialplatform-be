@@ -24,4 +24,29 @@ public class PostService : IPostService
     {
         return await _postRepository.CreatePost(post);
     }
+
+    public async Task<List<Post>> GetPostsByFollowingAsync(int userId)
+    {
+        return await _postRepository.GetPostsByFollowingAsync(userId);
+    }
+
+    public async Task<Post> LikeAPost(int userId, int postId)
+    {
+        return await _postRepository.LikeAPost(userId, postId);
+    }
+
+    public async Task<Post?> GetPostById(int id)
+    {
+        return await _postRepository.GetPostById(id);
+    }
+
+    public async Task<Post> UnlikeAPost(int userId, int postId)
+    {
+        return await _postRepository.UnlikeAPost(userId, postId);
+    }
+
+    public async Task<Post?> CommentAPost(int userId, int postId, string content)
+    {
+        return await _postRepository.CommentAPost(userId, postId, content);
+    }
 }

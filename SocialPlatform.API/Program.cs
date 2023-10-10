@@ -1,11 +1,14 @@
 
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SocialPlatform.API.Hubs;
 using SocialPlatform.API.Services;
+using SocialPlatform.Data;
 using SocialPlatform.Data.Context;
 using SocialPlatform.Data.Repositories;
 using SocialPlatform.Services.Services;
@@ -50,7 +53,7 @@ services.AddControllersWithViews()
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
     );
 
-
+services.AddSignalR();
 // services
 services.AddScoped<IUserService, UserService>();
 services.AddScoped<IAuthService, AuthService>();
@@ -59,6 +62,7 @@ services.AddScoped<IPostService, PostService>();
 // repositories
 services.AddScoped<IUserRepository, UserRepository>();
 services.AddScoped<IPostRepository, PostRepository>();
+
 
 services.AddDbContext<SocialPlatformDbContext>(options =>
 {
@@ -117,5 +121,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<NotificationHub>("/notifications");
 app.Run();

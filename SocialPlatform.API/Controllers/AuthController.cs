@@ -24,7 +24,13 @@ public class AuthController : ControllerBase
             return BadRequest("Invalid credentials.");
         return Ok(user);
     }
-    
+
+    [HttpPost]
+    public async Task<IActionResult> CheckPassword(UserAuthDto request)
+    {
+        var res = await _authService.CheckPassword(request);
+        return Ok(res);
+    }
 
    
 }
